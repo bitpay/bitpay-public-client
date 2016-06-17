@@ -4,11 +4,11 @@
 [![Build Status](https://img.shields.io/travis/bitpay/bitpay-public-client.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitpay-public-client) 
 [![Coverage Status](https://coveralls.io/repos/bitpay/bitpay-public-client/badge.svg)](https://coveralls.io/r/bitpay/bitpay-public-client)
 
-A client library for the [BitPay API public facade](https://bitpay.com/api). 
+A client library for the [BitPay API](https://bitpay.com/api) public facade.
 
 ## Description
 
-This package communicates with [BitPay](https://bitpay.com/api) using REST. All REST endpoints are wrapped as simple async methods.
+This package communicates with [BitPay](https://bitpay.com/api) using the BitPay REST API.
 
 ## Get Started
 
@@ -17,11 +17,7 @@ You can start using bitpay-pubiciclient in any of these ways:
 * via [Bower](http://bower.io/): by running `bower install bitpay-public-client` from your console
 * or via [NPM](https://www.npmjs.com/package/bitpay-public-client): by running `npm install bitpay-public-client` from your console.
 
-## Example
-
-TBD
-
-Install `bitpay-public-client` before start:
+### Installation
 
 ```
 npm i bitpay-public-client
@@ -55,9 +51,9 @@ All available option attributes are described bellow.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
-`opts.subscriberID` | `string`  | | A globally unique id used to identify a subscriber (e.g., email address).
-`opts.deviceType`   | `string`  | | The device type being subscribed, can be either `android` or `ios`.
-`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+`opts.subscriberId` | `string` | | A globally unique id used to identify a subscriber (e.g., email address).
+`opts.deviceType`   | `string` | | The device type being subscribed, can be either `android` or `ios`.
+`opts.deviceToken`  | `string` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 ### API.unsubscribeFromNotifications(opts, callback)
 
@@ -80,7 +76,7 @@ All available option attributes are described bellow.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
-`opts.deviceToken` | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+`opts.deviceToken` | `string` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 ### API.getNotifiedInvoices(opts, callback)
 
@@ -111,7 +107,7 @@ All available option attributes are described bellow.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
-`opts.deviceToken` | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+`opts.deviceToken` | `string` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 * * *
 
