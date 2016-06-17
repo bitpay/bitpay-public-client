@@ -29,7 +29,7 @@ var log = require('./log');
 var Package = require('../package.json');
 var Errors = require('./errors');
 
-var BASE_URL = 'http://bitpay.com/api';
+var BASE_URL = 'http://bitpay.com';
 
 /**
  * @desc ClientAPI constructor.
@@ -61,6 +61,23 @@ API.prototype.initialize = function(opts, cb) {
 };
 
 /**
+ * Returns all rates or the specified exchange rate.
+ * @param {Object} opts
+ * @param {String} opts.currency - (Optional) The currency to get the rate.
+ * @returns {Object} response - the rate.
+ */
+API.prototype.getRates = function(opts, cb) {
+  var url = '/rates/';
+  if (opts && opts.currency) {
+    url += opts.currency;
+  }
+  this._doGetRequest(url, function(err, response) {
+    if (err) return cb(err);
+    return cb(null, response);
+  });
+};
+
+/**
  * Returns subscription status.
  * @param {Object} opts
  * @param {String} opts.user - User to subscribe.
@@ -68,7 +85,7 @@ API.prototype.initialize = function(opts, cb) {
  * @param {String} opts.token - Device token.
  * @returns {Object} response - Status of subscription.
  */
-API.prototype.notificationsSubscribe = function(opts, cb) {
+API.prototype.subscribeToNotifications = function(opts, cb) {
   var url = '/notifications/subscribe/';
   this._doPostRequest(url, opts, function(err, response) {
     if (err) return cb(err);
@@ -82,9 +99,9 @@ API.prototype.notificationsSubscribe = function(opts, cb) {
  * @param {String} opts.token - Device token.
  * @return {Callback} cb - Status of unsubscription.
  */
-API.prototype.notificationsUnsubscribe = function(opts, cb) {
+API.prototype.unsubscribeFromNotifications = function(opts, cb) {
   var url = '/notifications/unsubscribe/';
-  this._doPostRequest(url, function(err, response) {
+  this._doPostRequest(url, opts, function(err, response) {
     if (err) return cb(err);
     return cb(null, response);
   });
@@ -96,9 +113,9 @@ API.prototype.notificationsUnsubscribe = function(opts, cb) {
  * @param {String} opts.token - Device token.
  * @return {Callback} cb - An array of payment URLs or an error.
  */
-API.prototype.notificationsInvoices = function(opts, cb) {
+API.prototype.getNotifiedInvoices = function(opts, cb) {
   var url = '/notifications/invoices/';
-  this._doPostRequest(url, function(err, response) {
+  this._doPostRequest(url, opts, function(err, response) {
     if (err) return cb(err);
     return cb(null, response);
   });
@@ -128,6 +145,19 @@ API._parseError = function(body) {
     } else {
       ret = new Error(body.code);
     }
+  } else if (body && body.errors) {
+    var msg = '';
+    for (var i = 0; i < body.errors.length; i++) {
+      switch (body.error[i].message) {
+        case 'Missing required parameter':
+          msg += body.errors[i].message + ': ' + body.errors[i].param + '\n';
+          break;
+        default:
+          msg += body.errors[i].message + '\n';
+          break;
+      }
+      ret = new Error(msg);
+    }
   } else {
     ret = new Error(body.error || body);
   }
@@ -137,7 +167,6 @@ API._parseError = function(body) {
 
 API.prototype._getHeaders = function(method, url, args) {
   var headers = {
-    'x-client-version': 'bpc-' + Package.version,
   };
   return headers;
 }
