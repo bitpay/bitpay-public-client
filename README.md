@@ -29,21 +29,48 @@ npm i bitpay-public-client
 
 # Global
 
-
 * * *
 
 ## Class: API
 ClientAPI constructor.
 
-TBD
+### API.subscribeToNotifications(opts, opts.subscriberId, opts.deviceType, opts.deviceToken) 
 
+Subscribes the device to receive push notifications.
 
+**Parameters**
 
+**opts**: `Object`, Returns subscription status.
 
+**opts.subscriberId**: `String`, A globally unique id used to identify a subscriber (e.g., email address).
 
+**opts.deviceType**: `String`, The device type being subscribed, can be either `android` or `ios`.
 
+**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
+**Returns**: `Object`, response - Status of subscription.
 
+### API.unsubscribeFromNotifications(opts, opts.deviceToken)
+
+Unsubscribes the device from receiving push notifications.
+
+**Parameters**
+
+**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+
+**Returns**: `Callback`, cb - Status of unsubscription.
+
+### API.getNotifiedInvoices(opts, opts.deviceToken)
+
+Retrieves a list of recently created invoices. The specified `deviceToken` is used to reference the `subscriberId`. If the `subscriberId` matches the `buyer` `email` field of one or more recently created invoices then the payment URL for each invoice is returned..
+
+**Parameters**
+
+**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+
+**Returns**: `Callback`, cb - Status of unsubscription.
+
+* * *
 
 The MIT License
 
