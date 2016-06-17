@@ -1,0 +1,23 @@
+{
+  "name": "bitpay-public-client",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bitpay/bitpay-public-client",
+  "authors": ["BitPay Inc"],
+  "description": "Client for public facade of BitPay API",
+  "keywords": [
+    "bitcoin",
+    "bitpay",
+    "client"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib",
+    "node_modules",
+    "Gruntfile.js",
+    "Makefile",
+    "index.js",
+    "test",
+    "Makefile"
+  ]
+}
