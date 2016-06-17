@@ -149,7 +149,7 @@ API._parseError = function(body) {
     var msg = '';
     for (var i = 0; i < body.errors.length; i++) {
       switch (body.errors[i].error) {
-        case 'Missing required parameter':
+        case 'Missing required parameter.':
           msg += body.errors[i].error + ': ' + body.errors[i].param + '\n';
           break;
         default:
