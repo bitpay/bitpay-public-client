@@ -156,8 +156,8 @@ API._parseError = function(body) {
           msg += body.errors[i].error + '\n';
           break;
       }
-      ret = new Error(msg);
     }
+    ret = new Error(msg);
   } else {
     ret = new Error(body.error || body);
   }
