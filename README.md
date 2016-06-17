@@ -38,37 +38,83 @@ ClientAPI constructor.
 
 Subscribes the device to receive push notifications.
 
+**Returns**
+
+On error:
+
+- `Object` the status of the subscribe request.
+
 **Parameters**
 
-**opts**: `Object`, Returns subscription status.
+### Parameters
 
-**opts.subscriberId**: `String`, A globally unique id used to identify a subscriber (e.g., email address).
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts`    | `Object` | `{}` | An object describing relevant specific options.
 
-**opts.deviceType**: `String`, The device type being subscribed, can be either `android` or `ios`.
+All available option attributes are described bellow.
 
-**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
-
-**Returns**: `Object`, response - Status of subscription.
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts.subscriberID` | `string`  | | A globally unique id used to identify a subscriber (e.g., email address).
+`opts.deviceType`   | `string`  | | The device type being subscribed, can be either `android` or `ios`.
+`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 ### API.unsubscribeFromNotifications(opts, opts.deviceToken)
 
 Unsubscribes the device from receiving push notifications.
 
+**Returns**
+
+On error:
+
+- `Object` the status of the unsubscribe request.
+
 **Parameters**
 
-**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+### Parameters
 
-**Returns**: `Callback`, cb - Status of unsubscription.
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts`    | `Object` | `{}` | An object describing relevant specific options.
+
+All available option attributes are described bellow.
+
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 ### API.getNotifiedInvoices(opts, opts.deviceToken)
 
 Retrieves a list of recently created invoices. The specified `deviceToken` is used to reference the `subscriberId`. If the `subscriberId` matches the `buyer` `email` field of one or more recently created invoices then the payment URL for each invoice is returned..
 
+**Returns**
+
+On success:
+
+All available option attributes are described bellow.
+
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`paymentURLs` | `array` | | One URL for each pending point-of-sale payment (typically one) where you can pay the invoice(s). Only the BIP 72 protocol URL for payment resolution is returned. URLs are temporary and will change and not be available after 15 minutes when the invoice expires, unless the invoice has been paid.
+
+On error:
+
+- `Object` the status of the unsubscribe request.
+
 **Parameters**
 
-**opts.deviceToken**: `String`, The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+### Parameters
 
-**Returns**: `Callback`, cb - Status of unsubscription.
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts`    | `Object` | `{}` | An object describing relevant specific options.
+
+All available option attributes are described bellow.
+
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 * * *
 
