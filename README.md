@@ -30,6 +30,29 @@ npm i bitpay-public-client
 ## Class: API
 ClientAPI constructor.
 
+### API.getRates(opts, callback) 
+
+Retrieves exchange rates.  Rates are exchange rates, representing the number of fiat currency units equivalent to one BTC.  See https://bitpay.com/bitcoin-exchange-rates.
+
+**Returns**
+
+On success:
+
+- `Object` the table of rates or a single rate.
+
+**Parameters**
+
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts`    | `Object` | `{}` | An object describing relevant specific options.
+`callback` | `Object` | `{}` | Function called when request is complete.
+
+All available option attributes are described bellow.
+
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts.currency` | `string` | Empty, get all rates | ISO 4217 3-character currency code.
+
 ### API.subscribeToNotifications(opts, callback) 
 
 Subscribes the device to receive push notifications.
