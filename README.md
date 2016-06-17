@@ -34,7 +34,7 @@ npm i bitpay-public-client
 ## Class: API
 ClientAPI constructor.
 
-### API.subscribeToNotifications(opts, opts.subscriberId, opts.deviceType, opts.deviceToken) 
+### API.subscribeToNotifications(opts, callback) 
 
 Subscribes the device to receive push notifications.
 
@@ -46,11 +46,10 @@ On error:
 
 **Parameters**
 
-### Parameters
-
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
+`callback` | `Object` | `{}` | Function called when request is complete.
 
 All available option attributes are described bellow.
 
@@ -60,7 +59,7 @@ Attribute | Type | Default | Description
 `opts.deviceType`   | `string`  | | The device type being subscribed, can be either `android` or `ios`.
 `opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
-### API.unsubscribeFromNotifications(opts, opts.deviceToken)
+### API.unsubscribeFromNotifications(opts, callback)
 
 Unsubscribes the device from receiving push notifications.
 
@@ -72,19 +71,18 @@ On error:
 
 **Parameters**
 
-### Parameters
-
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
+`callback` | `Object` | `{}` | Function called when request is complete.
 
 All available option attributes are described bellow.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
-`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+`opts.deviceToken` | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
-### API.getNotifiedInvoices(opts, opts.deviceToken)
+### API.getNotifiedInvoices(opts, callback)
 
 Retrieves a list of recently created invoices. The specified `deviceToken` is used to reference the `subscriberId`. If the `subscriberId` matches the `buyer` `email` field of one or more recently created invoices then the payment URL for each invoice is returned..
 
@@ -104,17 +102,16 @@ On error:
 
 **Parameters**
 
-### Parameters
-
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
+`callback` | `Object` | `{}` | Function called when request is complete.
 
 All available option attributes are described bellow.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
-`opts.deviceToken`  | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
+`opts.deviceToken` | `boolean` | | The device token (e.g., APNS/GCM registration ID, obtained from a third-party service) to be used for push notification.
 
 * * *
 
