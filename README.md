@@ -47,7 +47,7 @@ Parameter | Type | Default | Description
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
 `callback` | `Object` | `{}` | Function called when request is complete.
 
-All available option attributes are described bellow.
+All available option attributes are described below.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
@@ -70,7 +70,7 @@ Parameter | Type | Default | Description
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
 `callback` | `Object` | `{}` | Function called when request is complete.
 
-All available option attributes are described bellow.
+All available option attributes are described below.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
@@ -95,7 +95,7 @@ Parameter | Type | Default | Description
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
 `callback` | `Object` | `{}` | Function called when request is complete.
 
-All available option attributes are described bellow.
+All available option attributes are described below.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
@@ -109,7 +109,7 @@ Retrieves a list of recently created invoices. The specified `deviceToken` is us
 
 On success:
 
-All available option attributes are described bellow.
+All available option attributes are described below.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
@@ -126,7 +126,7 @@ Parameter | Type | Default | Description
 `opts`    | `Object` | `{}` | An object describing relevant specific options.
 `callback` | `Object` | `{}` | Function called when request is complete.
 
-All available option attributes are described bellow.
+All available option attributes are described below.
 
 Attribute | Type | Default | Description
 --------- | ---- | ------- | -----------
