@@ -12,7 +12,7 @@ This package communicates with [BitPay](https://bitpay.com/api) using the BitPay
 
 ## Get Started
 
-You can start using bitpay-pubiciclient in any of these ways:
+You can start using bitpay-public-client in any of these ways:
 
 * via [Bower](http://bower.io/): by running `bower install bitpay-public-client` from your console
 * or via [NPM](https://www.npmjs.com/package/bitpay-public-client): by running `npm install bitpay-public-client` from your console.
@@ -29,6 +29,32 @@ npm i bitpay-public-client
 
 ## Class: API
 ClientAPI constructor.
+
+### API.createInvoice(opts, callback) 
+
+Create a new invoice.  See https://bitpay.com/api#resource-Invoices.
+
+**Returns**
+
+On success:
+
+- `Object` the new invoice data.
+
+**Parameters**
+
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts`    | `Object` | `{}` | An object describing relevant specific options.
+`callback` | `Object` | `{}` | Function called when request is complete.
+
+All required option attributes are described below.  See https://bitpay.com/api#resource-Invoices for additional options.
+
+Attribute | Type | Default | Description
+--------- | ---- | ------- | -----------
+`opts.token` | `string` |  | A BitPay API token.
+`opts.guid` | `string` |  | A unique id.
+`opts.currency` | `string` |  | ISO 4217 3-character currency code.
+`opts.price` | `string` |  | The amount (in the specified currency) for which the invoice should be created.
 
 ### API.getRates(opts, callback) 
 

@@ -12,7 +12,7 @@ This package communicates with [BitPay](https://bitpay.com/api) using REST. All 
 
 ## Get Started
 
-You can start using bitpay-pubiciclient in any of these ways:
+You can start using bitpay-public-client in any of these ways:
 
 * via [Bower](http://bower.io/): by running `bower install bitpay-public-client` from your console
 * or via [NPM](https://www.npmjs.com/package/bitpay-public-client): by running `npm install bitpay-public-client` from your console.
