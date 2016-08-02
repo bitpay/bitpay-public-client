@@ -2,7 +2,7 @@
   "name": "bitpay-public-client",
   "description": "Client for public facade of BitPay API",
   "author": "BitPay Inc",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "keywords": [
     "bitcoin",
