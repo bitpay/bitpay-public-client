@@ -9,7 +9,7 @@ clean:
 	rm bitpay-public-client.min.js
 
 bitpay-public-client.js: index.js lib/*.js
-	${BIN_PATH}browserify $< > $@ --standalone 'bitpay'
+	${BIN_PATH}browserify $< > $@ --standalone 'Bitpay'
 
 bitpay-public-client.min.js: bitpay-public-client.js
 	uglify  -s $<  -o $@
