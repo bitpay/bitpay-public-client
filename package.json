@@ -51,12 +51,15 @@
     }
   ],
   "browserify": {
-    "transform": [ "aliasify" ]
+    "transform": [
+      "aliasify"
+    ]
   },
   "aliasify": {
     "aliases": {
       "request": "browser-request",
-      "url": "./lib/utils/url"
+      "url": "./lib/utils/url",
+      "util": "./lib/utils/util"
     }
   }
 }
