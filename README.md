@@ -17,10 +17,34 @@ You can start using bitpay-public-client in any of these ways:
 * via [Bower](http://bower.io/): by running `bower install bitpay-public-client` from your console
 * or via [NPM](https://www.npmjs.com/package/bitpay-public-client): by running `npm install bitpay-public-client` from your console.
 
-### Installation
+Alternatively, download the uncompressed or minified js files and place them in your web sites scripts directory.
+
+## Usage
+
+### Browser
+
+Include either the full or minified script in the head of your HTML page:
 
 ```
-npm i bitpay-public-client
+<script src="bitpay-public-client.min.js"></script>
+```
+
+Load the library as follows:
+
+```
+<script>
+    var API = new Bitpay();
+</script>
+```
+
+### NodeJS
+
+Just require the library and instantiate it:
+
+```
+var Bitpay = require('bitpay-public-client');
+
+var API = new Bitpay();
 ```
 
 # Global

@@ -47,3 +47,5 @@ Session.vim
 .AppleDouble
 .LSOverride
 
+# IDE files
+.idea
