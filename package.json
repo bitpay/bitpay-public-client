@@ -55,7 +55,8 @@
   },
   "aliasify": {
     "aliases": {
-      "request": "browser-request"
+      "request": "browser-request",
+      "url": "./lib/utils/url"
     }
   }
 }
