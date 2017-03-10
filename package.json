@@ -24,6 +24,7 @@
     "request": "^2.53.0"
   },
   "devDependencies": {
+    "aliasify": "^2.1.0",
     "browserify": "^9.0.3",
     "chai": "^1.9.1",
     "coveralls": "^2.11.2",
@@ -48,5 +49,13 @@
       "name": "Andy Phillipson",
       "email": "andy@bitpay.com"
     }
-  ]
+  ],
+  "browserify": {
+    "transform": [ "aliasify" ]
+  },
+  "aliasify": {
+    "aliases": {
+      "request": "browser-request"
+    }
+  }
 }
